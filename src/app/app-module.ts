@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarComponent } from './components/car-component/car-component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     App,
     Header,
-    Footer
+    Footer,
+    CarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
