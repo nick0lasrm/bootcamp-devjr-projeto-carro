@@ -1,3 +1,5 @@
+<app-car-component [car]="car" (saveEmitter)="saveCar()"></app-car-component>
+
 <div class="container bg-light py-2 px-4 rounded-bottom">
     <h3>Carros Cadastrados:</h3>
     <table class="table table-light">
@@ -12,13 +14,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="text-end"></td>
+            <tr *ngFor="let car of cars">
+                <td>{{car.id}}</td>
+                <td>{{car.name}}</td>
+                <td>{{car.automaker}}</td>
+                <td>{{car.price}}</td>
+                <td>{{car.year}}</td>
+                <td class="text-end">
+                    <button class="btn btn-success me-2" (click)="updateCar(car)">Alterar</button>
+                    <button class="btn btn-danger" (click)="removeCar(car)">Remover</button>
+                </td>
             </tr>
         </tbody>
     </table>
